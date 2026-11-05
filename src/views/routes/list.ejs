@@ -2,13 +2,17 @@
 <h1><%- title %></h1>
 
 <div id="filters">
-    Search by Region:
-    <select id="region-filter">
+<form action="./routes" method="GET">
+    <label for="region">Search by Region:</label>
+    <select name="region" id="region">
         <option value="all">All Regions</option>
         <% regions.forEach((region) => { %>
-            <option value="<%= region %>" <%= query.region === region ? 'selected' : '' %>><%= region.charAt(0).toUpperCase() + region.slice(1) %></option>
+            <option value="<%= region %>" <%= query.region === region ? 'selected' : '' %>><%= region.charAt(0).toUpperCase() + region.slice(1) %>
+            </option>
         <% }); %>
     </select>
+    <button type="submit">Filter</button>
+</form>
 
     Search by Season:
     <select id="season-filter">
