@@ -416,4 +416,47 @@ article.confirmation-page {
             border: 2px solid var(--clr-primary);
         }
     }
+    /* 1. Hide nav, buttons, and unselected tickets/days */
+    /* This is a print page so we want to get rid of pretty much everything just their
+       confirmation code. */
+    /* header.content-grid>div.content >div.logo+nav, */
+    /* header div,
+        header div div, 
+        header div nav, Pretty sure these are the three that actually get rid of stuff from the header
+        div section div
+        */
+  header,
+  header div,
+  header div div,
+  header div div a,
+  header div div a img,
+  header div nav,
+  .btn-secondary  footer,
+  div section div,
+  div section div a,
+  div section.next-steps div.confirmation-actions a.btn.btn-primary,
+  button,
+  .form-actions,
+  .passenger-limit-note,
+  .ticket-card:not(:has(input:checked)),
+  .day-pill:not(.selected),
+  .success-icon, .next-steps, div.confirmation-actions, button.btn.btn-secondary, a.btn.btn-primary {
+    display: none;
+  }
+
+  /* 2. Shrink the whole page to fit on 1 sheet */
+  body {
+    zoom: 60%;
+    background: white;
+    color: black;
+  }
+
+  .booking-page,
+  .booking-page section,
+  .booking-page div {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
 }

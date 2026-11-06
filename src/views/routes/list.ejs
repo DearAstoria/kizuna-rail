@@ -3,6 +3,9 @@
 
 <div id="filters">
 <form action="./routes" method="GET">
+    <!-- Left Column -->
+    <div class="columns two">
+    <div class="filter-item">
     <label for="region">Search by Region:</label>
     <select name="region" id="region">
         <option value="all">All Regions</option>
@@ -11,16 +14,20 @@
             </option>
         <% }); %>
     </select>
-    <button type="submit">Filter</button>
-</form>
-
-    Search by Season:
-    <select id="season-filter">
+    </div>
+    <!-- Right Column -->
+    <div class="filter-item">
+    <label for="season" >Search by Season:</label>
+    <select name="season" id="season">
         <option value="all">Any Season</option>
         <% seasons.forEach((season) => { %>
             <option value="<%= season %>" <%= query.season === season ? 'selected' : '' %>><%= season.charAt(0).toUpperCase() + season.slice(1) %></option>
         <% }); %>
     </select>
+    </div>
+    </div> 
+<button type="submit">Filter</button>
+</form>
 </div>
 
 <div class="routes-grid">
